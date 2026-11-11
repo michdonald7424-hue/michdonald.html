@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Michdonald Ltd - Gadgets, electronics, accessories and more.">
+<title>Michdonald Ltd | Online Store</title>
+
+<style>
+:root {
+    --blue:#1261d6;
+    --dark:#14213d;
+    --text:#333;
+    --light:#f4f7fb;
+    --white:#fff;
+    --green:#16864a;
+    --red:#d93636;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:Arial,sans-serif;
+    color:var(--text);
+    background:white;
+    line-height:1.6;
+}
+
+button,input,select,textarea {
+    font:inherit;
+}
+
+button,a {
+    cursor:pointer;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+header {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:white;
+    padding:15px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.logo {
+    font-size:21px;
+    font-weight:900;
+    color:var(--dark);
+}
+
+.logo span {
+    color:var(--blue);
+}
+
+nav {
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+nav a {
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover {
+    color:var(--blue);
+}
+
+.menu-btn {
+    display:none;
+    border:0;
+    background:var(--blue);
+    color:white;
+    padding:8px 13px;
+    border-radius:6px;
+    font-size:20px;
+}
+
+.btn {
+    display:inline-block;
+    background:var(--blue);
+    color:white;
+    padding:12px 20px;
+    border:0;
+    border-radius:7px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.btn:hover {
+    background:#0848a8;
+}
+
+.btn-secondary {
+    background:var(--dark);
+}
+
+.btn-danger {
+    background:var(--red);
+}
+
+.btn-green {
+    background:var(--green);
+}
+
+.hero {
+    min-height:520px;
+    padding:65px 7%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+    background:var(--light);
+}
+
+.hero h1 {
+    font-size:clamp(38px,5vw,65px);
+    color:var(--dark);
+    line-height:1.1;
+    margin:15px 0;
+}
+
+.hero p {
+    margin-bottom:15px;
+}
+
+.hero img {
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+.tag {
+    color:var(--blue);
+    font-weight:bold;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+section {
+    padding:65px 7%;
+}
+
+.section-heading {
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-heading h2 {
+    color:var(--dark);
+    font-size:32px;
+}
+
+.categories,.features {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.category {
+    padding:30px 15px;
+    border:1px solid #eee;
+    border-radius:12px;
+    text-align:center;
+    background:white;
+    font-size:35px;
+}
+
+.category h3 {
+    font-size:16px;
+    margin-top:10px;
+}
+
+.light {
+    background:var(--light);
+}
+
+.features {
+    grid-template-columns:repeat(3,1fr);
+}
+
+.feature {
+    background:white;
+    padding:25px;
+    border:1px solid #eee;
+    border-radius:12px;
+}
+
+.feature h3 {
+    margin:10px 0;
+    color:var(--dark);
+}
+
+.banner {
+    background:var(--dark);
+    color:white;
+    padding:55px 20px;
+    text-align:center;
+}
+
+.banner h1 {
+    font-size:38px;
+    margin:10px 0;
+}
+
+.banner .tag {
+    color:#9bc5ff;
+}
+
+.shop-tools {
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.shop-tools input,.shop-tools select {
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:7px;
+    flex:1;
+    min-width:0;
+}
+
+.products {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.product {
+    border:1px solid #eee;
+    border-radius:12px;
+    overflow:hidden;
+    background:white;
+    transition:.2s;
+}
+
+.product:hover {
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px #00000012;
+}
+
+.product img {
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    background:#eee;
+}
+
+.product-info {
+    padding:17px;
+}
+
+.product-info small {
+    color:var(--blue);
+    font-weight:bold;
+}
+
+.product-info h3 {
+    margin:7px 0;
+}
+
+.product-info p {
+    color:#777;
+    font-size:14px;
+}
+
+.price {
+    display:block;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--blue);
+    margin-top:12px;
+}
+
+.product button {
+    width:100%;
+}
+
+.cta {
+    text-align:center;
+    background:var(--dark);
+    color:white;
+}
+
+.cta h2 {
+    font-size:30px;
+}
+
+.about-grid,.contact-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.about-grid img {
+    width:100%;
+    border-radius:12px;
+}
+
+.contact-box,.admin-box {
+    background:var(--light);
+    padding:25px;
+    border-radius:12px;
+}
+
+.form-control {
+    display:block;
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:7px;
+    background:white;
+}
+
+textarea.form-control {
+    min-height:110px;
+    resize:vertical;
+}
+
+.cart-item {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:17px 0;
+    border-bottom:1px solid #eee;
+    flex-wrap:wrap;
+}
+
+.cart-item button {
+    border:0;
+    padding:7px 11px;
+    border-radius:5px;
+    background:#eaf0f8;
+}
+
+.cart-summary {
+    background:var(--light);
+    padding:22px;
+    margin-top:25px;
+    border-radius:10px;
+}
+
+footer {
+    background:#101a2d;
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+}
+
+footer p {
+    color:#bbc5d5;
+    margin-top:8px;
+}
+
+footer button {
+    background:transparent;
+    border:1px solid #667;
+    color:white;
+    padding:8px 13px;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+/* ADMIN DASHBOARD */
+
+#adminPage {
+    display:none;
+    min-height:100vh;
+    background:#f1f4f9;
+    padding:30px 5%;
+}
+
+.admin-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.admin-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat-card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #eee;
+}
+
+.stat-card strong {
+    display:block;
+    color:var(--blue);
+    font-size:25px;
+}
+
+.admin-panel {
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    margin-bottom:25px;
+    border:1px solid #eee;
+}
+
+.admin-panel h2 {
+    margin-bottom:15px;
+    color:var(--dark);
+}
+
+.admin-product {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:13px 0;
+    border-bottom:1px solid #eee;
+    flex-wrap:wrap;
+}
+
+.admin-product img {
+    width:60px;
+    height:55px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.admin-product-info {
+    flex:1;
+    min-width:120px;
+}
+
+.admin-actions {
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.admin-actions button {
+    border:0;
+    padding:8px 11px;
+    border-radius:5px;
+    color:white;
+    background:var(--blue);
+}
+
+.admin-actions .delete {
+    background:var(--red);
+}
+
+.order-card {
+    padding:15px;
+    border:1px solid #eee;
+    border-radius:9px;
+    margin:12px 0;
+    background:white;
+}
+
+.order-card select {
+    padding:8px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    margin-top:8px;
+}
+
+.hidden {
+    display:none !important;
+}
+
+#toast {
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#14213d;
+    color:white;
+    padding:13px 20px;
+    border-radius:8px;
+    z-index:500;
+    display:none;
+    width:max-content;
+    max-width:90%;
+}
+
+@media(max-width:850px) {
+    .menu-btn {
+        display:block;
+    }
+
+    nav {
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:0 8px 15px #00000012;
+    }
+
+    nav.show {
+        display:flex;
+    }
+
+    .hero,.about-grid,.contact-grid {
+        grid-template-columns:1fr;
+    }
+
+    .categories {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px) {
+    section {
+        padding:45px 5%;
+    }
+
+    .hero {
+        padding:45px 5%;
+    }
+
+    .hero img {
+        height:250px;
+    }
+
+    .products,.features {
+        grid-template-columns:1fr;
+    }
+
+    .shop-tools {
+        flex-direction:column;
+    }
+
+    .banner h1 {
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="mainHeader">
+    <a href="#" class="logo" onclick="showPage('home')">
+        MICHDONALD <span>LTD.</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('shop')">Shop</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+        <a href="#" onclick="showPage('cart')">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<!-- HOME PAGE -->
+
+<main id="homePage">
+
+<section class="hero">
+    <div>
+        <p class="tag">WELCOME TO MICHDONALD LTD</p>
+        <h1>Technology That Makes Life Better.</h1>
+        <p>
+            Discover quality gadgets, electronics, accessories
+            and everyday essentials at competitive prices.
+        </p>
+        <button class="btn" onclick="showPage('shop')">
+            Explore Products
+        </button>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=900"
+        alt="Electronic gadgets">
+</section>
+
+<section>
+    <div class="section-heading">
+        <p class="tag">OUR CATEGORIES</p>
+        <h2>What Are You Looking For?</h2>
+    </div>
+
+    <div class="categories">
+        <div class="category">📱<h3>Phones</h3></div>
+        <div class="category">💻<h3>Laptops</h3></div>
+        <div class="category">🎧<h3>Accessories</h3></div>
+        <div class="category">⌚<h3>Smart Devices</h3></div>
+    </div>
+</section>
+
+<section class="light">
+    <div class="section-heading">
+        <p class="tag">OUR STORE</p>
+        <h2>Featured Products</h2>
+    </div>
+
+    <div class="products" id="featuredProducts"></div>
+
+    <div style="text-align:center;margin-top:25px">
+        <button class="btn" onclick="showPage('shop')">
+            View All Products
+        </button>
+    </div>
+</section>
+
+<section>
+    <div class="section-heading">
+        <p class="tag">WHY SHOP WITH US?</p>
+        <h2>Our Commitment</h2>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>⭐ Quality Products</h3>
+            <p>Explore gadgets and useful everyday products.</p>
+        </div>
+
+        <div class="feature">
+            <h3>💰 Competitive Prices</h3>
+            <p>Find products at prices that offer value.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📞 Customer Support</h3>
+            <p>Contact us for enquiries and assistance.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Find Your Next Favourite Gadget</h2>
+    <p>Explore our available products today.</p>
+    <button class="btn" onclick="showPage('shop')">
+        Shop Now
+    </button>
+</section>
+
+</main>
+
+<!-- SHOP PAGE -->
+
+<main id="shopPage" class="hidden">
+
+<section class="banner">
+    <p class="tag">MICHDONALD ONLINE STORE</p>
+    <h1>Our Products</h1>
+    <p>Explore gadgets, electronics and accessories.</p>
+</section>
+
+<section>
+    <div class="shop-tools">
+        <input
+            type="search"
+            id="productSearch"
+            placeholder="Search products..."
+            oninput="renderProducts()">
+
+        <select id="categoryFilter" onchange="renderProducts()">
+            <option value="all">All Categories</option>
+            <option value="Phones">Phones</option>
+            <option value="Computers">Computers</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Smart Devices">Smart Devices</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+
+    <div class="products" id="productGrid"></div>
+</section>
+
+</main>
+
+<!-- ABOUT PAGE -->
+
+<main id="aboutPage" class="hidden">
+
+<section class="banner">
+    <p class="tag">WHO WE ARE</p>
+    <h1>About Michdonald Ltd</h1>
+    <p>Gadgets, electronics, accessories and more.</p>
+</section>
+
+<section class="about-grid">
+    <div>
+        <p class="tag">OUR COMPANY</p>
+        <h2>Welcome to Michdonald Ltd.</h2>
+        <p>
+            Michdonald Ltd is a business enterprise focused on
+            gadgets, electronics, accessories and other useful
+            consumer products.
+        </p>
+        <p>
+            Our goal is to provide customers with a convenient
+            way to discover and order products that meet their
+            everyday needs.
+        </p>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900"
+        alt="Retail business">
+</section>
+
+<section class="light">
+    <div class="features">
+        <div class="feature">
+            <h3>🎯 Our Mission</h3>
+            <p>To make useful products accessible to customers.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🚀 Our Vision</h3>
+            <p>To grow into a trusted retail enterprise.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🤝 Our Values</h3>
+            <p>Reliability, customer satisfaction and integrity.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- CONTACT PAGE -->
+
+<main id="contactPage" class="hidden">
+
+<section class="banner">
+    <p class="tag">GET IN TOUCH</p>
+    <h1>Contact Us</h1>
+    <p>We are ready to hear from you.</p>
+</section>
+
+<section class="contact-grid">
+
+    <div>
+        <h2>Let's Talk</h2>
+        <p>Contact Michdonald Ltd for orders and product enquiries.</p>
+
+        <br>
+        <p><strong>📱 WhatsApp</strong></p>
+        <p>Chat with our sales team.</p>
+
+        <br>
+        <p><strong>📧 Email</strong></p>
+        <p>michdonald7424@gmail.com</p>
+
+        <br>
+        <p><strong>📍 Location</strong></p>
+        <p>Nigeria</p>
+    </div>
+
+    <form class="contact-box" onsubmit="sendEnquiry(event)">
+        <h2>Send an Enquiry</h2>
+
+        <input class="form-control" id="customerName"
+            placeholder="Your name" required>
+
+        <input class="form-control" id="customerEmail"
+            type="email" placeholder="Your email" required>
+
+        <input class="form-control" id="customerSubject"
+            placeholder="Subject" required>
+
+        <textarea class="form-control" id="customerMessage"
+            placeholder="Your message" required></textarea>
+
+        <button class="btn" type="submit">
+            Send via WhatsApp
+        </button>
+    </form>
+
+</section>
+
+</main>
+
+<!-- CART PAGE -->
+
+<main id="cartPage" class="hidden">
+
+<section class="banner">
+    <p class="tag">YOUR SELECTION</p>
+    <h1>Shopping Cart</h1>
+    <p>Review your products before ordering.</p>
+</section>
+
+<section>
+    <div id="cartItems"></div>
+
+    <div class="cart-summary">
+        <h2>Total: <span id="cartTotal">₦0</span></h2>
+
+        <button class="btn btn-green" onclick="checkout()">
+            Order via WhatsApp
+        </button>
+
+        <button class="btn btn-secondary" onclick="showPage('shop')">
+            Continue Shopping
+        </button>
+    </div>
+</section>
+
+</main>
+
+<!-- ADMIN DASHBOARD -->
+
+<main id="adminPage">
+
+    <div class="admin-header">
+        <div>
+            <p class="tag">MICHDONALD LTD</p>
+            <h1>Owner Dashboard</h1>
+            <p>Manage your store products and orders.</p>
+        </div>
+
+        <button class="btn btn-danger" onclick="closeAdmin()">
+            Exit Dashboard
+        </button>
+    </div>
+
+    <div class="admin-grid">
+        <div class="stat-card">
+            <p>Total Products</p>
+            <strong id="totalProducts">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <p>Total Orders</p>
+            <strong id="totalOrders">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <p>Pending Orders</p>
+            <strong id="pendingOrders">0</strong>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+        <h2 id="productFormTitle">Add New Product</h2>
+
+        <form onsubmit="saveProduct(event)">
+
+            <input type="hidden" id="editProductId">
+
+            <label>Product Name</label>
+            <input class="form-control" id="newProductName"
+                placeholder="Example: Samsung Smartphone" required>
+
+            <label>Category</label>
+            <select class="form-control" id="newProductCategory">
+                <option>Phones</option>
+                <option>Computers</option>
+                <option>Accessories</option>
+                <option>Smart Devices</option>
+                <option>Others</option>
+            </select>
+
+            <label>Price in Naira</label>
+            <input class="form-control" id="newProductPrice"
+                type="number" min="0" placeholder="Enter price" required>
+
+            <label>Description</label>
+            <textarea class="form-control" id="newProductDescription"
+                placeholder="Product description"></textarea>
+
+            <label>Product Image</label>
+            <input class="form-control" id="newProductImage"
+                type="file" accept="image/*">
+
+            <button class="btn" type="submit" id="saveProductButton">
+                Publish Product
+            </button>
+
+            <button class="btn btn-secondary" type="button"
+                onclick="resetProductForm()">
+                Clear Form
+            </button>
+
+        </form>
+    </div>
+
+    <div class="admin-panel">
+        <h2>Manage Products</h2>
+        <div id="adminProductList"></div>
+    </div>
+
+    <div class="admin-panel">
+        <h2>Customer Orders</h2>
+        <p>Orders created on this browser are displayed here.</p>
+        <div id="adminOrderList"></div>
+    </div>
+
+</main>
+
+<footer id="mainFooter">
+    <h2>MICHDONALD LTD.</h2>
+    <p>Gadgets • Electronics • Accessories • More</p>
+    <p>© <span id="year"></span> Michdonald Ltd. All rights reserved.</p>
+    <button onclick="openAdmin()">Owner / Admin</button>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+
+// =====================================
+// BUSINESS SETTINGS
+// =====================================
+
+// Replace this with your real WhatsApp number.
+// Nigerian format: 234 followed by your number.
+// Do not include + or spaces.
+
+const WHATSAPP_NUMBER = "2348012345678";
+
+// =====================================
+// DEFAULT PRODUCTS
+// =====================================
+
+const defaultProducts = [
+    {
+        id:1,
+        name:"Smartphone",
+        category:"Phones",
+        price:250000,
+        description:"Modern smartphone for everyday use.",
+        image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+    },
+    {
+        id:2,
+        name:"Laptop",
+        category:"Computers",
+        price:650000,
+        description:"Portable computer for work and study.",
+        image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
+    },
+    {
+        id:3,
+        name:"Wireless Earbuds",
+        category:"Accessories",
+        price:25000,
+        description:"Wireless audio for music and calls.",
+        image:"https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=600"
+    },
+    {
+        id:4,
+        name:"Smart Watch",
+        category:"Smart Devices",
+        price:45000,
+        description:"A convenient wearable smart device.",
+        image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
+    },
+    {
+        id:5,
+        name:"Bluetooth Speaker",
+        category:"Accessories",
+        price:35000,
+        description:"Portable speaker for entertainment.",
+        image:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600"
+    },
+    {
+ WHATSAPP_NUMBER 08130197424
